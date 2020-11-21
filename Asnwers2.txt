@@ -1,0 +1,208 @@
+
+Answers 2
+
+6. the octal representation of a file that can be read and written only by its owner
+
+Chmod u + rw-
+
+7. In UNIX systems, what is the common name of the special user that can access and modify every file?
+
+Super user
+
+8.Which file permission classes are available in UNIX systems?
+User - the file or directionally owner
+Group - members of a Grup or user
+Others - the ones who are not a owner, or a member of the group
+
+10.As of 2020, which percentage of servers have UNIX-like OS?
+According to the teaching of aland, More than 70% servers have UNIX-like OS
+
+11. UNIX Command: access your current working directory
+Pwd
+
+12. UNIX Command: rename files (give an example)
+Mv
+
+Example:
+To rename a file from Helene1 to helene I would use
+Mv Helene1 Helene2
+
+13. UNIX Command: schedule the execution of programs in the future
+At
+
+Example: at 7am tomorrow
+
+14. 14. UNIX Command: Forcefully shutdown the command with process ID 123
+Kill 123
+
+
+15. UNIX Command: access your root user
+Sudo -s
+
+16. Crontab scheduled: At minute 30 on Sunday.
+*/30 * * * sun
+
+17. Crontab scheduled: At minute 30 on day-of-month 15.
+*/30 * 15 * *
+
+18. Crontab scheduled: At 05:30 on every day-of-week from Sunday through Monday in June.
+
+30 5 * 6 * 
+
+19. Script: print your name and date
+#!/bin/bash
+
+echo please,enter your name:
+read  username
+echo Hello $username, the date is: $(date)
+
+20. Script: add two numeric values, print the result
+
+#!/bin/bash
+a=2
+b=3
+
+sum=$(( a+b))
+
+Echo $sum
+
+21. Script: inputs username, prints “USERNAME stored”
+
+#!/bin/bash
+
+echo please enter your username
+read username
+echo $username Stored
+
+
+
+22. Script: Store the output of the command “hostname” in a variable. Display “This script is running on _.” where “_” is the output of the “hostname” command.
+
+#!/bin/bash
+
+hostname="Halsos"
+echo this script is running on $hostname
+
+
+23. Script: Store the output of the working directory (from where the script is run) in a variable then print the variable.
+
+#!/bin/bash
+x=$(pwd)
+echo'Working Area is’$x
+
+24. Step by step
+
+A cronjob is a way to schedule a task at a specific time and date
+
+Log in to the server you wish to create a cronjob under, by using an SSH
+
+2. Run the following command
+Crontab -e
+
+3. Add you email for where you would like your crontab output to be delivered, or leave it blank
+
+4. Choose an editor ( nano is the simplest)
+
+5. You are now in the editor. Press "esc", and "I" to begin editing the file
+
+6. 
+This is an example that shows how to deside the timing of the output of the cronejob
+* * * * * command(s)
+- - - - -
+| | | | |
+| | | | ----- Day of week (0 - 7) (Sunday=0 or 7)
+| | | ------- Month (1 - 12)
+| | --------- Day of month (1 - 31)
+| ----------- Hour (0 - 23)
+------------- Minute (0 - 59)
+
+
+Put this in top of the editor
+#!/bin/bash
+
+The * symbolise different time identifications. Since we want to make the cronjob to run every 30 minutes, this one day, you write:
+
+*/30 * * * * echo
+
+To add the print that write: 
+
+Now=“date”
+
+*/30 * * * * echo  Echo task scheduled at $(date)
+
+
+7. Press esc to exit editing the file
+
+8. Type :wq to save and quit the file
+
+The cronjob is now saved, and should print “ TASK scheduled at DATE” and run every 30 minutes that day. 
+
+
+
+25. 
+
+#!/bin/bash
+
+list_options() {
+clear
+echo '1) What animal is an owl?'
+echo '2) Where do you find Oslo?'
+echo '3) What religion believes in Jesus?'
+echo 'q) Quit'
+}
+
+list_options
+read -p "Please write your choice: " input
+check_answer() {
+if [ "$input" == "q" ]
+then 
+exit
+fi
+
+if [ "$input" == "1" ]
+then 
+list_options
+echo “A bird"
+read -p "Please write your choice: " input
+check_answer
+fi
+
+if [ "$input" == "2" ]
+then
+list_options
+echo “In Norway."
+read -p "Please write your choice: " input
+check_answer
+fi
+
+if [ "$input" == "3" ]
+then
+list_options
+echo “Christianity."
+read -p "Please write your choice: " input
+check_answer
+fi
+
+if [ "$input" != "1" -a "$input" != "2" -a "$input" != "3" -a "$input" != "q" ]
+then
+list_options
+echo "Invalid input. Please try again using the listed options!"
+read -p "Please write your choice: " input
+check_answer
+fi
+}
+check_answer
+
+
+
+
+
+
+
+
+
+
+ 
+
+
+

@@ -1,0 +1,11 @@
+code {
+    white-space: pre-line;
+}
+* {
+    text-align: center;
+    list-style: none;
+
+}
+
+body {background-color: rgb(129, 162, 189);
+    }

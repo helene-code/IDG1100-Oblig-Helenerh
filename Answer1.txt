@@ -1,0 +1,19 @@
+1. What parts does the Von Neumann architecture consist? 
+The von Neumann architecture is a computer design that contains there components: 
+- A prosessing unit that prosess the information, and the ALU where the mathematical and logical processes is being done.
+- A memory unit that stores the data and instructions 
+- A controll and professing unit that interprets the instructions in the memory, and executes them
+- in/output mechanism, that makes sure it is communication between the user and the control unit.
+- External storage
+
+2. What is User space?
+Is all the codes and software that the user runs outside operation systems kernel.  This is to prevent that the users make errors, that will effect important core prosesses in the computer. 
+
+3. What is the Shell?
+A shell is a program that gives the user possibilities to make input to the operative system and control the computer, by making comands.
+
+4. Where is the shell located?
+The shell is located in the user space
+
+5. What is the main task of the shell?
+The main task of the shell is to provide a area where the user can make comands, and to execute those. 

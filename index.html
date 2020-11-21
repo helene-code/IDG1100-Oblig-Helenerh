@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>IDG1100-oblig</title>
+    <link rel="stylesheet" href="stylesheet.css">
+</head>
+
+<body>
+
+    <h1>IDG1100 OBLIG</h1>
+
+    <h3>Questions from answers1.txt and answers2.txt</h3>
+
+    <h3>1. What components are part of the Von Neuman Architecture?</h3>
+    <p>The von Neumann architecture is a computer design that contains there components:</p>
+    <ul>
+        <li>A prosessing unit that prosess the information, and the ALU where the mathematical and logical processes is being done.</li>
+        <li> A memory unit that stores the data and instructions </li>
+        <li>A controll and professing unit that interprets the instructions in the memory, and executes them</li>
+        <li>in/output mechanism, that makes sure it is communication between the user and the control unit.</li>
+        <li>External storage</li>
+       </ul>
+        
+       <h3> 2. what is User space?</h3>
+        <p>Is all the codes and software that the user runs outside operation systems kernel.  This is to prevent that the users make errors, that will effect important core prosesses in the computer. </p>
+        
+       <h3> 3. what the shell</h3>
+        <p>A shell is a program that gives the user possibilities to make input to the operative system and control the computer, by making comands.</p>
+        
+       <h3> 4. where is the shell located? </h3>
+        <p>The shell is located in the user space</p>
+        
+       <h3> 5. What is the main task of the shell</h3>
+        <p>The main task of the shell is to provide a area where the user can make comands, and to execute those. </p>
+
+
+<h3>6. what is the octal representation of a file that can be read and written only by its owner</h3>
+
+<code>Chmod u + rw-</code>
+
+<h3>7. In UNIX systems, what is the common name of the special user that can access and modify every file?</h3>
+
+<p>Super user</p>
+
+<h3>8.Which file permission classes are available in UNIX systems?</h3>
+
+<ul>
+<li>User - the file or directionally owner</li>
+<li>Group - members of a Grup or user</li>
+<li>Others - the ones who are not a owner, or a member of the group</li>
+</ul>
+
+<h3>10.As of 2020, which percentage of servers have UNIX-like OS?</h3>
+<p>According to the teaching of aland Mendoza, More than 70% servers have UNIX-like OS</p>
+
+<h3>11. UNIX Command: access your current working directory</h3>
+<code>Pwd</code>
+
+<p>12. UNIX Command: rename files (give an example)</p>
+<code>Mv</code>
+
+<p>Example:
+To rename a file from Helene1 to helene I would use:</p>
+<code>Mv Helene1 Helene2</code>
+
+<h3>13. UNIX Command: schedule the execution of programs in the future</h3>
+<code>At</code>
+
+<p>Example:</p> <code>at 7am tomorrow</code>
+
+<h3>14. UNIX Command: Forcefully shutdown the command with process ID 123</h3>
+<code>Kill 123</code>
+
+
+<h3>5. UNIX Command: access your root user</h3>
+<code>Sudo -s</code>
+
+<h3>16. Crontab scheduled: At minute 30 on Sunday.</h3>
+<code>*/30 * * * sun</code>
+
+<h3>17. Crontab scheduled: At minute 30 on day-of-month 15.</h3>
+<code>*/30 * 15 * *</code>
+
+<h3>18. Crontab scheduled: At 05:30 on every day-of-week from Sunday through Monday in June.</h3>
+<code>30 5 * 6 * </code>
+
+<h3>19. Script: print your name and date</h3>
+
+<code>#!/bin/bash
+
+echo please,enter your name:
+read  username
+echo Hello $username, the date is: $(date)</code>
+
+<h3>20. Script: add two numeric values, print the result</h3>
+
+<code>
+#!/bin/bash
+myvar=$(expr 1 + 1)
+echo $myvar
+
+Echo $sum</code>
+
+<h3>21. Script: inputs username, prints “USERNAME stored”</h3s>
+
+<code>#!/bin/bash
+
+echo please enter your username
+read username
+echo $username Stored
+</code>
+
+
+
+<h3>22. Script: Store the output of the command “hostname” in a variable. Display “This script is running on _.” where “_” is the output of the “hostname” command.</h3>
+
+<code>#!/bin/bash
+
+hostname="Halsos"
+echo this script is running on $hostname
+</code>
+
+
+<h3>23. Script: Store the output of the working directory (from where the script is run) in a variable then print the variable.</h3>
+<code>#!/bin/bash
+
+x=$(pwd)
+echo'Working Area is’$x
+</code>
+
+<h3>24. Step by step</h3>
+
+<p>A cronjob is a way to schedule a task at a specific time and date</p>
+
+<p>1. Log in to the server you wish to create a cronjob under, by using an SSH</p>
+
+<p>2. Run the following command:
+Crontab -e</p>
+
+<p>3. Add you email for where you would like your crontab output to be delivered, or leave it blank</p>
+
+<p>4. Choose an editor ( nano is the simplest)</p>
+
+<p>5. You are now in the editor. Press "esc", and "I" to begin editing the file</p>
+
+<p>6.Put this in top of the editor</p>
+
+<code>#!/bin/bash
+
+The * symbolise different time identifications. Since we want to make the cronjob to run every 30 minutes, this one day, you write:
+
+*/30 * * * * echo
+
+To add the print that write "task scheduled at Date", write: 
+
+*/30 * * * * echo  Echo task scheduled at $(date)</code>
+
+
+<p>7. Press esc to exit editing the file</p>
+
+<p>8. Type :wq to save and quit the file</p>
+
+<p>The cronjob is now saved, and should print “ TASK scheduled at DATE” and run every 30 minutes that day. </p>
+
+<h3>25. write a script with a list</h3>
+<code>
+#!/bin/bash
+
+list_options() {
+clear
+echo '1) What animal is an owl?'
+echo '2) Where do you find Oslo?'
+echo '3) What religion believes in Jesus?'
+echo 'q) Quit'
+}
+
+list_options
+read -p "Please write your choice: " input
+check_answer() {
+if [ "$input" == "q" ]
+then 
+exit
+fi
+
+if [ "$input" == "1" ]
+then 
+list_options
+echo “A bird"
+read -p "Please write your choice: " input
+check_answer
+fi
+
+if [ "$input" == "2" ]
+then
+list_options
+echo “In Norway."
+read -p "Please write your choice: " input
+check_answer
+fi
+
+if [ "$input" == "3" ]
+then
+list_options
+echo “Christianity."
+read -p "Please write your choice: " input
+check_answer
+fi
+
+if [ "$input" != "1" -a "$input" != "2" -a "$input" != "3" -a "$input" != "q" ]
+then
+list_options
+echo "Invalid input. Please try again using the listed options!"
+read -p "Please write your choice: " input
+check_answer
+fi
+}
+check_answer
+
+</code>
+
+</body>
